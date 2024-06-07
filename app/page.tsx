@@ -17,7 +17,12 @@ export default function Home() {
     }
   }
 
+  const today = new Date();
+  const todayWeekDay = today.getDay()
   const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
+
+  const sortedWeekDay = 
+    weekDays.slice(todayWeekDay + 1).concat(weekDays.slice(0, todayWeekDay + 1))
 
   return (
     <>
@@ -38,8 +43,8 @@ export default function Home() {
                 </button>
               </div>
               <section className=" grid grid-cols-7 bg-neutral-800 rounded-md p-2">
-              {weekDays.map((day) => (
-                <div key={day} className="flex flex-col" >
+              {sortedWeekDay.map((day) => (
+                <div key={day} className="flex flex-col last:font-bold" >
                   <span className="font-sans text-xs text-white md:text-sm text-center">
                   {day}
                 </span>

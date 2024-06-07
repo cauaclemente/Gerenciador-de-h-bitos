@@ -1,5 +1,6 @@
 import { RiDeleteBin6Line } from "react-icons/ri";
 import DayState from "./components/dayState";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -55,6 +56,16 @@ export default function Home() {
             </div>
           ))
         }
+
+        <Link href="/new-habit" >
+          <button 
+            className="
+            fixed bg-[#45edad] text-neutral-900 font-semibold font-display rounded-md text-2xl 
+            p-2 bottom-10 w-[80%] max-w-[700px] left-1/2 -translate-x-1/2">
+            Novo hábito
+          </button>
+        </Link>
+
       </main>
     </>
   );
